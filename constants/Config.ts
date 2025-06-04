@@ -9,6 +9,7 @@ export const APP_CONFIG = {
     endpoint: 'https://fra.cloud.appwrite.io/v1',
     projectId: '68400026002613be243c',
     databaseId: '68400f8d000c22990f5e', // Your database ID from screenshot
+    bucketId: '684098b300129832ac9c',
   },
   
   // Collection IDs from your screenshot
@@ -21,6 +22,7 @@ export const APP_CONFIG = {
     orders: '68401a7b00271d097684',
     orderItems: '68401bfb0037842cb748',
   },
+  
 };
 
 export const STORAGE_KEYS = {

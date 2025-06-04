@@ -1,13 +1,13 @@
 // services/appwrite.service.ts
 import { APP_CONFIG } from '@/constants/Config';
 import type {
-    CartItem,
-    Category,
-    Location,
-    Order,
-    Product,
-    ProductGroup,
-    Shop
+  CartItem,
+  Category,
+  Location,
+  Order,
+  Product,
+  ProductGroup,
+  Shop
 } from '@/types';
 import { Client, Databases, ID, Query } from 'appwrite';
 
@@ -199,7 +199,7 @@ class AppwriteService {
       const itemPromises = orderData.items.map(item =>
         this.databases.createDocument(
           this.databaseId,
-          APP_CONFIG.collections.order_items, // Note: using underscore
+          APP_CONFIG.collections.orderItems, // Note: using underscore
           ID.unique(),
           {
             orderId: order.$id,

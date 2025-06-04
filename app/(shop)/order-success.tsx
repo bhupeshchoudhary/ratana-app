@@ -5,10 +5,11 @@ import { Ionicons } from '@expo/vector-icons';
 import { router, useLocalSearchParams } from 'expo-router';
 import React, { useEffect } from 'react';
 import {
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View
+  BackHandler,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -16,8 +17,15 @@ export default function OrderSuccessScreen() {
   const params = useLocalSearchParams<{ orderNumber: string; orderId: string }>();
 
   useEffect(() => {
-    const unsubscribe = router.canDismiss();
-    return () => unsubscribe;
+    // Prevent going back to the checkout screen
+    const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+      // Navigate to products screen instead of going back
+      router.replace('/(shop)/products');
+      return true; // Prevent default back behavior
+    });
+
+    // Cleanup
+    return () => backHandler.remove();
   }, []);
 
   const handleContinueShopping = () => {
