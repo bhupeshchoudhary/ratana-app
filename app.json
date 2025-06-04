@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "ratana-mobile",
-    "slug": "ratana-mobile",
+    "name": "ratana-retailer",
+    "slug": "ratana-retailer",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "ratanamobile",
+    "scheme": "ratanaretailer",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -37,6 +37,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "4d06dd8d-5d6e-4333-bcc9-d5d7a21e0305"
+      }
+    },
+    "owner": "bhupesh7750"
   }
 }
